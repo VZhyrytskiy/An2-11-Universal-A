@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-routing": {
+    "angular-ssr": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -95,7 +95,7 @@
         }
       }
     },
-    "angular-routing-e2e": {
+    "angular-ssr-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -121,7 +121,7 @@
       }
     }
   },
-  "defaultProject": "angular-routing",
+  "defaultProject": "angular-ssr",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
