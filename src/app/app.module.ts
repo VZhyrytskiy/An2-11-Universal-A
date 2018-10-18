@@ -20,7 +20,7 @@ import { MyInterceptor } from './core/interceptors/my.interceptor';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     HttpClientModule,
     CoreModule,
