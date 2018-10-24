@@ -9,7 +9,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:server-app:prod": "./node_modules/.bin/ng run angular-ssr:server"
+    "build:server-app:prod": "./node_modules/.bin/ng run angular-ssr:server",
+    "prerender": "./node_modules/.bin/ts-node ./prerender.ts",
+    "http": "http-server \"./dist/browser\""
+
   },
   "private": true,
   "dependencies": {
