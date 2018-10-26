@@ -5,14 +5,13 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently --kill-others \"ng serve -o\" \"json-server --watch db\\db.json\"",
+    "start:http-server": "http-server ./dist/browser",
     "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
     "build:server-app:prod": "./node_modules/.bin/ng run angular-ssr:server",
     "prerender": "./node_modules/.bin/ts-node ./prerender.ts",
-    "http": "http-server \"./dist/browser\""
-
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
