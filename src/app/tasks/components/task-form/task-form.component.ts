@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 
 // rxjs
 import { switchMap, tap } from 'rxjs/operators';
@@ -17,7 +18,9 @@ export class TaskFormComponent implements OnInit {
   constructor(
     private taskPromiseService: TaskPromiseService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private titleService: Title,
+    private metaService: Meta
   ) {}
 
   ngOnInit(): void {
@@ -33,7 +36,14 @@ export class TaskFormComponent implements OnInit {
       )
       .subscribe(
         // when Promise.resolve(null) => task = null => {...null} => {}
-        task => (this.task = { ...task }),
+        task => {
+          this.task = { ...task };
+          this.titleService.setTitle(`Task: ${this.task.action}`);
+          this.metaService.addTag({
+            name: 'description',
+            content: `Task: ${this.task.action}, hours: ${this.task.estHours}`
+          });
+        },
         err => console.log(err)
       );
   }

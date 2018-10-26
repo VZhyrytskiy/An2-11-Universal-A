@@ -8,7 +8,6 @@ import { filter, map, switchMap } from 'rxjs/operators';
 
 import { MessagesService, SpinnerService } from './core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -78,10 +77,11 @@ export class AppComponent implements OnInit, OnDestroy {
         filter(route => route.outlet === 'primary'),
         switchMap(route => route.data)
       )
-      .subscribe(
-      data => {
-        this.titleService.setTitle(data['title']);
-        this.metaService.addTags(data['meta']);
+      .subscribe(data => {
+        if (data['title']) {
+          this.titleService.setTitle(data['title']);
+          this.metaService.addTags(data['meta']);
+        }
       });
   }
 }
