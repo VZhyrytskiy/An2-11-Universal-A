@@ -39,11 +39,16 @@
         <div class="container">
           <app-spinner *ngIf="spinnerService.isVisible()"></app-spinner>
           <div class="col-md-10">
-            <router-outlet
-              (activate)='onActivate($event)'
-              (deactivate)='onDeactivate($event)'>
-          </router-outlet>
-          <!-- Routed views go here -->
+              <router-outlet
+                (activate)='onActivate($event)'
+                (deactivate)='onDeactivate($event)'>
+              </router-outlet>
+              <!-- Routed views go here -->
+
+            <div class="spinner-container" *appShellRender>
+              <app-spinner></app-spinner>
+            </div>
+
           </div>
           <div class="col-md-2">
             <button class="btn btn-success"
