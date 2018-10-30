@@ -15,7 +15,7 @@ export class AppShellNoRenderDirective implements OnInit {
   constructor(
     private viewContainer: ViewContainerRef,
     private templateRef: TemplateRef<any>,
-    @Inject(PLATFORM_ID) private platformId
+    @Inject(PLATFORM_ID) private platformId: any
   ) {}
 
   ngOnInit() {
