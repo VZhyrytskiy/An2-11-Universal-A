@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -24,6 +24,7 @@ import { MyInterceptor } from './core/interceptors/my.interceptor';
     // The application ID can be any identifier which is unique on
     // the page.
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserTransferStateModule,
     FormsModule,
     HttpClientModule,
     CoreModule,
